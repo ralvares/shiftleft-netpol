@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: shiftleft-netpol-demo
+  namespace: openshift-gitops
+spec:
+  destination:
+    name: ''
+    namespace: ''
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: manifests
+    repoURL: 'http://gogs.gogs.svc.cluster.local:3000/developer/shiftleft-netpol.git'
+    targetRevision: shiftleft-netpol
+  project: default
+

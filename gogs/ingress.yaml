@@ -1,0 +1,15 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: gogs 
+  namespace: gogs 
+  labels:
+    app: gogs
+spec:
+  to:
+    kind: Service
+    name: gogs
+    weight: 100
+  port:
+    targetPort: 3000
+  wildcardPolicy: None

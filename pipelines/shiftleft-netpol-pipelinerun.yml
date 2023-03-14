@@ -1,0 +1,33 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: shiftleft-netpol-demo
+  namespace: shiftleft-netpol
+  labels:
+    tekton.dev/pipeline: shiftleft-netpol
+spec:
+  params:
+    - name: repo
+      value: 'http://gogs.gogs.svc.cluster.local:3000/developer/shiftleft-netpol.git'
+    - name: branch
+      value: main
+    - name: netpol-path
+      value: manifests
+    - name: git_user_name
+      value: developer
+    - name: git_user_email
+      value: developer@example.com
+  pipelineRef:
+    name: shiftleft-netpol
+  serviceAccountName: netpol
+  timeout: 1h0m0s
+  workspaces:
+    - name: workdir
+      volumeClaimTemplate:
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: 1Gi
+          volumeMode: Filesystem

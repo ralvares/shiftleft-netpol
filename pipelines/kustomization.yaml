@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: shiftleft-netpol 
+resources:
+- namespace.yaml
+- stackrox-generate-netpol-task.yaml
+- npguard-netpol-report-task.yaml
+- shiftleft-netpol-pipeline.yaml
+- git-repo-auth-secret.yaml
+- serviceaccount-pipeline-netpol.yaml
