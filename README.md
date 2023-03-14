@@ -92,6 +92,10 @@ The pipeline is generating new network policies based on the static YAML resourc
 
 ![pipelinerun](images/pipelinerun.png)
 
+The changes to the "shiftleft-netpol" branch includes the file netpols.yaml as a resource to the kustomize.yaml file.
+
+![git-changes](images/repo-changes.png)
+
 ## ArgoCD Status - out-of-sync
 Once the changes are pushed to the Git repository, the ArgoCD status will change to "out-of-sync" because it has not yet delivered the new policies.
 
