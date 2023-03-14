@@ -39,7 +39,7 @@ spec:
     spec:
       containers:
       - name: gogs
-        image: gogs/gogs:0.12.3
+        image: gogs/gogs
         lifecycle:
           postStart:
             exec:
