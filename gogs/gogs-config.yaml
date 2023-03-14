@@ -29,7 +29,6 @@ data:
     [service]
     REGISTER_EMAIL_CONFIRM        = false
     ENABLE_NOTIFY_MAIL            = false
-    REGISTER_EMAIL_CONFIRM        = false
     DISABLE_REGISTRATION          = true
      
     [security]
