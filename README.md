@@ -1,5 +1,7 @@
 # Overview
 
+In this demo, we'll showcase how **roxctl generate netpol** simplifies the experience of creating and maintaining Kubernetes network policies, This means you can deploy an application with initial auto-generated micro-segmentation from day zero. 
+
 This README provides a step-by-step guide for installing the OpenShift Pipelines and OpenShift GitOps Operators and creating a demo pipeline for the shiftleft-netpol using RHACS.
 
 # Pre-Requirements
