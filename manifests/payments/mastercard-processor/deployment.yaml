@@ -5,24 +5,6 @@ metadata:
   namespace: payments
   labels:
     app: mastercard-processor
-
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
-metadata:
-  name: mastercard-processor
-  namespace: payments
-  labels:
-    app: mastercard-processor
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: Role
-  name: cluster-admin
-subjects:
-  - kind: ServiceAccount
-    name: mastercard-processor
-    namespace: payments
-
 ---
 # Deployment named "mastercard-processor"
 # Listens on :8080
@@ -45,7 +27,6 @@ spec:
       labels:
         app: mastercard-processor
     spec:
-      serviceAccountName: mastercard-processor
       containers:
         - image: quay.io/vuln/rce-webapp:latest
           command: ["/bin/entrypoint"]

@@ -43,6 +43,9 @@ spec:
               protocol: TCP
             - containerPort: 8080
               protocol: TCP
+          env:
+            - name: exploit
+              value: "true"
 ---
 # Service named "visa-processor-service"
 # Listens on :8080
