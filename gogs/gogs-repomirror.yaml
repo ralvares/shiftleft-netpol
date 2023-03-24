@@ -10,7 +10,8 @@ data:
     admin_password=$(cat $admin_secret_file)
     developer_username="developer"
     developer_password="developer"
-    external_repo_url="https://github.com/ralvares/security-demos.git"
+    #external_repo_url="https://github.com/ralvares/security-demos.git"
+    external_repo_url="https://github.com/ralvares/shiftleft-netpol"
     mirror_repo_name="shiftleft-netpol"
 
     # Generate admin token
