@@ -4,10 +4,10 @@ metadata:
   name: shiftleft-netpol-demo
   namespace: openshift-gitops
 spec:
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+#  syncPolicy:
+#    automated:
+#      prune: true
+#      selfHeal: true
   destination:
     name: ''
     namespace: ''
@@ -17,4 +17,3 @@ spec:
     repoURL: 'http://gogs.gogs.svc.cluster.local:3000/developer/shiftleft-netpol.git'
     targetRevision: main
   project: default
-

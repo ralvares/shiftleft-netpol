@@ -34,7 +34,7 @@ spec:
     script: |
       #!/usr/bin/env bash
       kustomize build $(params.netpol-path) > /tmp/all.yaml
-      /bin/roxctl generate netpol /tmp/all.yaml > $(params.netpol-path)/netpols.yaml && if [ "$(params.openshift)" = "true" ]; then sed -i 's/port: 53/port: 5353/' $(params.netpol-path)/netpols.yaml; fi && cd $(params.netpol-path); kustomize edit add resource netpols.yaml
+      /bin/roxctl generate netpol /tmp/all.yaml > $(params.netpol-path)/netpols.yaml 2> /dev/null && if [ "$(params.openshift)" = "true" ]; then sed -i 's/port: 53/port: 5353/' $(params.netpol-path)/netpols.yaml; fi && cd $(params.netpol-path); kustomize edit add resource netpols.yaml; cat netpols.yaml
     workingDir: $(workspaces.source.path)
   workspaces:
   - name: source

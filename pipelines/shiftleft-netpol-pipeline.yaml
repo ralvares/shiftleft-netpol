@@ -14,7 +14,7 @@ spec:
     - default: manifests
       name: netpol-path
       type: string
-    - default: developer 
+    - default: developer
       name: git_user_name
       type: string
     - default: developer@example.com
@@ -75,7 +75,7 @@ spec:
             git checkout -b netpol
             git add .
             git commit --allow-empty -m "[Tekton] Updating netpols"
-            git push origin HEAD:shiftleft-netpol --force
+            git push origin HEAD:main --force
 
         - name: USER_HOME
           value: /root
